@@ -67,28 +67,9 @@
     
     <script type="text/javascript">
     $(document).ready(function () {
-
-    	$('.decimal1').keyup(function () {
-    	            var val = $(this).val();
-    	            //alert(val);
-    	            if (isNaN(val)) {
-    	                val = val.replace(/[^0-9\.]/g, '');
-    	                if (val.split('.').length > 2)
-    	                    val = val.replace(/\.+$/, "");
-    	            }
-    	            var checkfordigit = val.split(".");
-    	            if (checkfordigit.length == 2) {
-    	                if (checkfordigit[1].length > 3) {
-    	                    val = Number.parseFloat(val).toFixed(2);
-    	                }
-    	            }
-    	            $(this).val(val);
-
-    	        });
-    	
+        
     	$('.inputnumber').keyup(function () {
-    		var pattern = new RegExp(/^\d*$/);
-            var val = $(this).val();
+    	var val = $(this).val();
             if (isNaN(val)) {
             	 $(this).val('');
             }else{
@@ -99,7 +80,7 @@
               }
         });
     	
-    	/*
+    	/* REGEX to make input type number
     	$('.inputnumber').keyup(function () {
     		var pattern = new RegExp(/^\d*$/);
             var val = $(this).val();
